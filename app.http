@@ -1,2 +1,24 @@
-POST  http://localhost:3000/players/
+get  http://localhost:3000/players/
 ###
+
+post http://localhost:3000/players/
+Content-Type: application/type
+
+{
+  "playerName": "Vishal",
+  "jerseyNumber": 17,
+  "role": "Bowler"
+}
+###
+get  http://localhost:3000/players/1/
+###
+put  http://localhost:3000/players/13/
+Content-Type: application/type
+
+{
+  "player_name": "Maneesh",
+  "jersey_number": 54,
+  "role": "All-rounder"
+}
+###
+delete http://localhost:3000/players/15/
