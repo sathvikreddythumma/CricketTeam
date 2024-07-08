@@ -47,19 +47,14 @@ app.post("/players/", async (request, response) => {
    '${jerseyNumber}',
    '${role}');`;
   const playersArray = await db.run(addPlyDetails);
-  const player_id = playersArray.lastID;
-  {
-    player_id: player_id;
-  }
-
-  response.send(playersArray);
+  response.send("Player Added to Team");
 });
 //API 3
 app.get("/players/:playerId/", async (request, response) => {
   const { playerId } = request.params;
   const getPly = `SELECT * FROM cricket_team where player_id='${playerId}';`;
-  const plaArray = await db.get(getPly);
-  response.send(plaArray);
+  const playersArray = await db.get(getPly);
+  response.send(convertDbObjectToResponseObject(playersArray));
 });
 //API 4
 app.put("/players/:playerId/", async (request, response) => {
@@ -82,7 +77,7 @@ app.put("/players/:playerId/", async (request, response) => {
       role: playersArray.role,
     };
   };
-  response.send(playersArray);
+  response.send("Player Details Updated");
 });
 //API 5
 app.delete("/players/:playerId/", async (request, response) => {

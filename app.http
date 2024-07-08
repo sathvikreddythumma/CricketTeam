@@ -10,7 +10,7 @@ Content-Type: application/type
   "role": "Bowler"
 }
 ###
-get  http://localhost:3000/players/1/
+get  http://localhost:3000/players/5/
 ###
 put  http://localhost:3000/players/16/
 Content-Type: application/type
@@ -21,4 +21,4 @@ Content-Type: application/type
   "role": "All-rounder"
 }
 ###
-delete http://localhost:3000/players/17/
+delete http://localhost:3000/players/1/
